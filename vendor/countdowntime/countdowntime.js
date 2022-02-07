@@ -1,7 +1,7 @@
 (function ($) {
     "use strict";
 
-    $.fn.extend({ 
+    $.fn.extend({
 
       countdown100: function(options) {
         var defaults = {
@@ -21,28 +21,28 @@
           var timeNow = new Date();
 
           var tZ = options.timeZone; console.log(tZ);
-          var endYear = options.endtimeYear;
-          var endMonth = options.endtimeMonth;
-          var endDate = options.endtimeDate;
-          var endHours = options.endtimeHours;
-          var endMinutes = options.endtimeMinutes;
-          var endSeconds = options.endtimeSeconds;
+          // var endYear = options.endtimeYear;
+          // var endMonth = options.endtimeMonth;
+          // var endDate = options.endtimeDate;
+          // var endHours = options.endtimeHours;
+          // var endMinutes = options.endtimeMinutes;
+          // var endSeconds = options.endtimeSeconds;
 
           if(tZ == "") {
-            var deadline = new Date(endYear, endMonth - 1, endDate, endHours, endMinutes, endSeconds);
-          } 
+            var deadline = new Date(2022, 3 - 1, 4, 0, 0, 0);
+          }
           else {
-            var deadline = moment.tz([endYear, endMonth - 1, endDate, endHours, endMinutes, endSeconds], tZ).format();
+            var deadline = moment.tz([2022, 3 - 1, 4, 0, 0, 0], tZ).format();
           }
 
           if(Date.parse(deadline) < Date.parse(timeNow)) {
-            var deadline = new Date(Date.parse(new Date()) + endDate * 24 * 60 * 60 * 1000 + endHours * 60 * 60 * 1000); 
+            var deadline = new Date(Date.parse(new Date()) + endDate * 24 * 60 * 60 * 1000 + endHours * 60 * 60 * 1000);
           }
-          
-          
+
+
           initializeClock(deadline);
 
-          function getTimeRemaining(endtime) { 
+          function getTimeRemaining(endtime) {
             var t = Date.parse(endtime) - Date.parse(new Date());
             var seconds = Math.floor((t / 1000) % 60);
             var minutes = Math.floor((t / 1000 / 60) % 60);
@@ -57,13 +57,13 @@
             };
           }
 
-          function initializeClock(endtime) { 
+          function initializeClock(endtime) {
             var daysSpan = $(obj).find('.days');
             var hoursSpan = $(obj).find('.hours');
             var minutesSpan = $(obj).find('.minutes');
             var secondsSpan = $(obj).find('.seconds');
 
-            function updateClock() { 
+            function updateClock() {
               var t = getTimeRemaining(endtime);
 
               daysSpan.html(t.days);
@@ -80,13 +80,13 @@
             var timeinterval = setInterval(updateClock, 1000);
           }
 
-          
+
 
 
         });
       }
     });
 
-    
+
 
 })(jQuery);
