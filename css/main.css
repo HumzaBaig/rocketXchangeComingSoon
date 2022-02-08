@@ -202,12 +202,13 @@ Primary use:
   height: 100%;
   top: 0;
   left: 0;
-  background: #7579ff;
+  /* background: #7579ff;
   background: -webkit-linear-gradient(bottom, #b224ef, #7579ff);
   background: -o-linear-gradient(bottom, #b224ef, #7579ff);
   background: -moz-linear-gradient(bottom, #b224ef, #7579ff);
   background: linear-gradient(bottom, #b224ef, #7579ff);
-  opacity: 0.3;
+  opacity: 0.3; */
+  background-color: #000000;
 }
 
 .overlay1::after {
