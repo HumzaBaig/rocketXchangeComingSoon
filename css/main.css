@@ -57,3 +57,18 @@ main {
   opacity: 0.7;
   max-width: 90ch;
 }
+
+@media only screen and (max-width: 600px) {
+  .disclaimer-container {
+    margin-top: 10%;
+    max-width: 85%;
+  }
+
+  .disclaimer-1, .disclaimer-2 {
+    font-size: 12px;
+  }
+
+  .hide-on-mobile {
+    display: none;
+  }
+}
